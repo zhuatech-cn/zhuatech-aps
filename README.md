@@ -87,3 +87,7 @@ APS 开源、APS 源码、高级计划排程系统、有限产能排程、生产
 ## 工作中心负荷平衡
 
 新增 `POST /api/admin/capacity-balance`，扣除维护停机后计算有效产能，将计划工时与换型工时转换为负荷率和超负荷小时。系统会对急单锁定、批次合并和替代工作中心给出调度建议，超过 120% 时标记为 `CRITICAL`。
+
+## 排程可行性检查
+
+新增 `POST /api/aps/insights/schedule-feasibility`。接口从班次产能中扣除换型和计划维护时间，再结合可用加班能力判断生产任务能否落地，返回 `FEASIBLE`、`USE_OVERTIME` 或 `RESCHEDULE`，并明确产能余量或缺口，为计划员调整工单顺序提供依据。
