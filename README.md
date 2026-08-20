@@ -91,3 +91,7 @@ APS 开源、APS 源码、高级计划排程系统、有限产能排程、生产
 ## 排程可行性检查
 
 新增 `POST /api/aps/insights/schedule-feasibility`。接口从班次产能中扣除换型和计划维护时间，再结合可用加班能力判断生产任务能否落地，返回 `FEASIBLE`、`USE_OVERTIME` 或 `RESCHEDULE`，并明确产能余量或缺口，为计划员调整工单顺序提供依据。
+
+## 订单交期承诺
+
+新增 `POST /api/aps/insights/order-promise`，综合订单所需工时、可用及替代产能、瓶颈队列、物料齐套率和临期状态，计算可执行工时、产能缺口与承诺置信度，返回 `CONFIRM / EXPEDITE / RENEGOTIATE`。销售与计划团队可在回复客户前获得可解释的交期依据。
