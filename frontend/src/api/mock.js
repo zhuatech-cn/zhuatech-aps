@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const workOrders=[
  {id:1,no:'PLN-260731-018',product:'智能执行器 AX120',code:'FG-AX120',center:'总装资源组',workshop:'装配车间',plan:1200,done:864,defect:12,due:'07-31',batch:'B260731A',status:'执行中',progress:72,priority:'插单'},
  {id:2,no:'PLN-260731-021',product:'精密减速器 DR80',code:'FG-DR80',center:'精加工资源组',workshop:'机加车间',plan:680,done:272,defect:7,due:'08-01',batch:'B260731C',status:'执行中',progress:40,priority:'正常'},
