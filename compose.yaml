@@ -8,7 +8,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change-me-for-local-only}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-change-root-password}
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    voluaps:
+    volumes:
       - aps_mysql_data:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
@@ -35,5 +35,5 @@ services:
     depends_on:
       - backend
 
-voluaps:
+volumes:
   aps_mysql_data:
