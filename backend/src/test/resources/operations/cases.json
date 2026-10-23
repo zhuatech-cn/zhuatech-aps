@@ -1,0 +1,56 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "requiredBatches": "#9",
+      "requiredMinutes": "#210",
+      "batchExtraQty": "#8"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "availableMinutes": "209"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "timeShortfall": "#1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "completedQty": "105"
+    },
+    "expected": {
+      "requiredMinutes": "#0",
+      "requiredBatches": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "completedQty": "106"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "batchSize": "0"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "completedQty": "9"
+    },
+    "expected": {
+      "requiredBatches": "#8",
+      "batchExtraQty": "#0"
+    },
+    "error": false
+  }
+]

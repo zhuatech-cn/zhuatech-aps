@@ -1,0 +1,101 @@
+{
+  "slug": "aps",
+  "title": "整批加工与换型后可用产能",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "orderQty",
+      "label": "订单件数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "completedQty",
+      "label": "已完工件数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "batchSize",
+      "label": "每批件数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "1",
+      "max": "1000000"
+    },
+    {
+      "key": "cycleMinutes",
+      "label": "每批加工分钟",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "1",
+      "max": "10080"
+    },
+    {
+      "key": "setupMinutes",
+      "label": "本次换型分钟",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "10080"
+    },
+    {
+      "key": "availableMinutes",
+      "label": "本次窗口分钟",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "10080"
+    }
+  ],
+  "columns": [
+    {
+      "key": "remainingQty",
+      "label": "待完工数量"
+    },
+    {
+      "key": "requiredBatches",
+      "label": "整批数量"
+    },
+    {
+      "key": "requiredMinutes",
+      "label": "含换型所需分钟"
+    },
+    {
+      "key": "timeShortfall",
+      "label": "窗口缺口分钟"
+    },
+    {
+      "key": "batchExtraQty",
+      "label": "整批多出数量"
+    }
+  ],
+  "description": "按剩余订单、整批大小、单批周期和换型分钟计算整批需求与时间缺口，不重排真实计划。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "orderQty": "105",
+        "completedQty": "5",
+        "batchSize": "12",
+        "cycleMinutes": "20",
+        "setupMinutes": "30",
+        "availableMinutes": "240"
+      }
+    ]
+  }
+}
